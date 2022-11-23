@@ -9,4 +9,4 @@ Create a new workspace and clone in the src folder<br>
 <code>cd ~/robo_arm_ws<code><br>
 
 To launch<br>
-ros2 launch robo-arm-bringup demo.launch.py<br>
+<code>ros2 launch robo-arm-bringup demo.launch.py<code><br>
