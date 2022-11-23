@@ -7,8 +7,8 @@ MoveIt2 Foxy distro<br>
 https://moveit.picknik.ai/foxy/index.html<br><br>
 
 Create a new workspace and clone in the src folder<br>
-<code>cd ~/robo_arm_ws<br>
+<code>cd ~/robo_arm_ws<br><br>
 
-To launch<br>
+To launch<br><br>
 <code>ros2 launch robo-arm-bringup demo.launch.py<br>
 <body>
