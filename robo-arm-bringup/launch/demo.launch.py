@@ -42,7 +42,7 @@ def generate_launch_description():
     # planning_context
     robot_description_config = xacro.process_file(
         os.path.join(
-            get_package_share_directory("moveit_resources_panda_moveit_config"),
+            get_package_share_directory("robo-arm-description"),
             "config",
             "panda.urdf.xacro",
         )
@@ -50,14 +50,14 @@ def generate_launch_description():
     robot_description = {"robot_description": robot_description_config.toxml()}
 
     robot_description_semantic_config = load_file(
-        "moveit_resources_panda_moveit_config", "config/panda.srdf"
+        "robo-arm-description", "config/panda.srdf"
     )
     robot_description_semantic = {
         "robot_description_semantic": robot_description_semantic_config
     }
 
     kinematics_yaml = load_yaml(
-        "moveit_resources_panda_moveit_config", "config/kinematics.yaml"
+        "robo-arm-description", "config/kinematics.yaml"
     )
     robot_description_kinematics = {"robot_description_kinematics": kinematics_yaml}
 
@@ -70,13 +70,13 @@ def generate_launch_description():
         }
     }
     ompl_planning_yaml = load_yaml(
-        "moveit_resources_panda_moveit_config", "config/ompl_planning.yaml"
+        "robo-arm-description", "config/ompl_planning.yaml"
     )
     ompl_planning_pipeline_config["move_group"].update(ompl_planning_yaml)
 
     # Trajectory Execution Functionality
     moveit_simple_controllers_yaml = load_yaml(
-        "moveit_resources_panda_moveit_config", "config/panda_controllers.yaml"
+        "robo-arm-description", "config/panda_controllers.yaml"
     )
     moveit_controllers = {
         "moveit_simple_controller_manager": moveit_simple_controllers_yaml,
@@ -116,8 +116,8 @@ def generate_launch_description():
     # RViz
     tutorial_mode = LaunchConfiguration("rviz_tutorial")
     rviz_base = os.path.join(get_package_share_directory("robo-arm-bringup"), "launch")
-    rviz_full_config = os.path.join(rviz_base, "panda_moveit_config_demo.rviz")
-    rviz_empty_config = os.path.join(rviz_base, "panda_moveit_config_demo_empty.rviz")
+    rviz_full_config = os.path.join(rviz_base, "robo-arm-config-demo.rviz")
+    rviz_empty_config = os.path.join(rviz_base, "robo-arm-config-demo-empty.rviz")
     rviz_node_tutorial = Node(
         package="rviz2",
         executable="rviz2",
@@ -167,7 +167,7 @@ def generate_launch_description():
 
     # ros2_control using FakeSystem as hardware
     ros2_controllers_path = os.path.join(
-        get_package_share_directory("moveit_resources_panda_moveit_config"),
+        get_package_share_directory("robo-arm-description"),
         "config",
         "panda_ros_controllers.yaml",
     )
@@ -208,8 +208,39 @@ def generate_launch_description():
         output="screen",
     )
 
+    #Gazebo
+    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    robot_name = 'robo-arm-description'
+    world_file_name = 'empty.world'
+
+    world = os.path.join(get_package_share_directory(
+        robot_name), 'worlds', world_file_name)
+
+    urdf = os.path.join(get_package_share_directory(
+        robot_name), 'urdf', 'panda.urdf')
+
+    xml = open(urdf, 'r').read()
+
+    xml = xml.replace('"', '\\"')
+
+    swpan_args = '{name: \"my_robot\", xml: \"' + xml + '\" }'
+
     return LaunchDescription(
         [
+            ExecuteProcess(
+                cmd=['gazebo', '--verbose', world,
+                     '-s', 'libgazebo_ros_factory.so'],
+                output='screen'),
+
+            ExecuteProcess(
+                cmd=['ros2', 'param', 'set', '/gazebo',
+                    'use_sim_time', use_sim_time],
+                output='screen'),
+
+            ExecuteProcess(
+                cmd=['ros2', 'service', 'call', '/spawn_entity',
+                    'gazebo_msgs/SpawnEntity', swpan_args],
+                output='screen'),
             tutorial_arg,
             rviz_node,
             rviz_node_tutorial,
