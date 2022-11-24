@@ -1,0 +1,4 @@
+[submodule "moveit_visual_tools"]
+	url = https://github.com/ros-planning/moveit_visual_tools
+[submodule "rviz_visual_tools"]
+	url = https://github.com/PickNikRobotics/rviz_visual_tools
