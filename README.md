@@ -16,3 +16,6 @@
   To launch<br>
     <code>ros2 launch robo-arm-bringup demo.launch.py</code><br>
   </body>
+  
+  Upon launching<br>
+    In the RViz, choose "Add" and choose Motion Planning<br>
