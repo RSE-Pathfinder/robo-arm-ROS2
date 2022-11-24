@@ -32,8 +32,8 @@ moveit::planning_interface::MoveGroupInterface move_group(move_group_node, PLANN
 //Planning Scene interface object for adding and removing collision objects in the "virtual world"
 moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
 // Raw pointers are frequently used to refer to the planning group for improved performance.
-const moveit::core::JointModelGroup* joint_model_group =
-    move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+//const moveit::core::JointModelGroup* joint_model_group =
+    //move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
 
 //Visualisation
 namespace rvt = rviz_visual_tools;
