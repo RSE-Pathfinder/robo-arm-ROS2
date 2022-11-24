@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <param name="robot_description" command="cat '$(find my_robot_urdf)/urdf/environment.urdf'" />
+    
+    <node name="book_spawner" pkg="robo-arm-gazebo" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model book" />
+          
+</launch>
