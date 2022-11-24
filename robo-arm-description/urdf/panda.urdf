@@ -4,29 +4,38 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
     <link name="panda_link0">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link0.dae" />
+                <mesh filename="file://$(find robo-arm-description)/share/robo-arm-description/meshes/visual/link0.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link0.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link0.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <link name="panda_link1">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link1.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link1.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link1.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link1.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint1" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
@@ -39,14 +48,18 @@
     <link name="panda_link2">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link2.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link2.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link2.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link2.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint2" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628" />
@@ -59,14 +72,18 @@
     <link name="panda_link3">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link3.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link3.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link3.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link3.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint3" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
@@ -79,14 +96,18 @@
     <link name="panda_link4">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link4.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link4.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link4.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link4.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint4" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="0.0175" />
@@ -99,14 +120,18 @@
     <link name="panda_link5">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link5.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link5.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link5.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link5.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint5" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
@@ -119,14 +144,18 @@
     <link name="panda_link6">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link6.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link6.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link6.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link6.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_joint6" type="revolute">
         <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525" />
@@ -139,12 +168,12 @@
     <link name="panda_link7">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/link7.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/link7.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/link7.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/link7.stl" />
             </geometry>
         </collision>
     </link>
@@ -171,40 +200,52 @@
     <link name="panda_hand">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/hand.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/hand.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/hand.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/hand.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <link name="panda_leftfinger">
         <visual>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/finger.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/finger.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/finger.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/finger.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <link name="panda_rightfinger">
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/visual/finger.dae" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/visual/finger.dae" />
             </geometry>
         </visual>
         <collision>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://moveit_resources_panda_description/meshes/collision/finger.stl" />
+                <mesh filename="file://$(find robo-arm-description)/meshes/collision/finger.stl" />
             </geometry>
         </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+        </inertial>
     </link>
     <joint name="panda_finger_joint1" type="prismatic">
         <parent link="panda_hand" />
