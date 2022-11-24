@@ -18,4 +18,4 @@
   </body>
   
   Upon launching<br>
-    In the RViz, choose "Add" and choose Motion Planning<br>
+    In the RViz, choose "Add" at bottom left corner and choose Motion Planning<br>
