@@ -22,6 +22,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(gazebo REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
+find_package(gazebo_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -41,6 +42,7 @@ include_directories(
 )
 
 set(dependencies
+  "gazebo_msgs"
   "geometry_msgs"
   "nav_msgs"
   "rclcpp"
@@ -84,6 +86,7 @@ install(DIRECTORY worlds/ DESTINATION share/${PROJECT_NAME}/worlds)
 ################################################################################
 ament_export_include_directories(include)
 ament_export_dependencies(gazebo_ros_pkgs)
+ament_export_dependencies(gazebo_msgs)
 ament_export_dependencies(geometry_msgs)
 ament_export_dependencies(nav_msgs)
 ament_export_dependencies(rclcpp)
