@@ -211,10 +211,10 @@ def generate_launch_description():
     #Gazebo
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     robot_name = 'robo-arm-description'
-    world_file_name = 'empty.world'
+    world_file_name = 'test1.world'#'empty_world.world'
 
     world = os.path.join(get_package_share_directory(
-        robot_name), 'worlds', world_file_name)
+        'robo-arm-gazebo'), 'worlds', world_file_name)
 
     urdf = os.path.join(get_package_share_directory(
         robot_name), 'urdf', 'panda.urdf')
@@ -223,7 +223,7 @@ def generate_launch_description():
 
     xml = xml.replace('"', '\\"')
 
-    swpan_args = '{name: \"my_robot\", xml: \"' + xml + '\" }'
+    swpan_args = '{name: \"robo-arm\", xml: \"' + xml + '\" }'
 
     return LaunchDescription(
         [
@@ -248,7 +248,8 @@ def generate_launch_description():
             robot_state_publisher,
             run_move_group_node,
             ros2_control_node,
-            mongodb_server_node,
+            #MongoDB not in use
+            #mongodb_server_node,
         ]
         + load_controllers
     )
