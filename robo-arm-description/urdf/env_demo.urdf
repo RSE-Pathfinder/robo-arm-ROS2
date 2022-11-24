@@ -27,6 +27,11 @@
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
       <material name="blue"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 0.02"/>
+      </geometry>
+    </collision>    
   </link>
   
   <link name="x1_wall_link"> 
@@ -37,6 +42,12 @@
       <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
       <material name="green"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+    </collision>     
   </link>
   
   <link name="x2_wall_link"> 
@@ -47,6 +58,12 @@
       <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
       <material name="green"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+    </collision>           
   </link>
   
   <link name="y1_wall_link"> 
@@ -57,6 +74,12 @@
       <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
       <material name="green"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.8 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>      
   </link>
   
   <link name="y2_wall_link"> 
@@ -66,7 +89,13 @@
       </geometry>
       <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
       <material name="green"/>
-    </visual>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>     
   </link>
   
   <link name="x1_shelf_btm_link"> 
@@ -77,6 +106,12 @@
       <origin xyz="0 0 0.005" rpy="0 0 0"/>
       <material name="red"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>        
   </link>
   
   <link name="x2_shelf_btm_link"> 
@@ -87,6 +122,12 @@
       <origin xyz="0 0 0.005" rpy="0 0 0"/>
       <material name="red"/>
     </visual>
+    <collision>
+      <geometry>    
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>       
   </link>
   
   <link name="y1_shelf_btm_link"> 
@@ -97,6 +138,12 @@
       <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
       <material name="red"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+    </collision>        
   </link>
   
   <link name="x1_shelf_top_link"> 
@@ -107,6 +154,12 @@
       <origin xyz="0 0 0.005" rpy="0 0 0"/>
       <material name="red"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>        
   </link>
   
   <link name="x2_shelf_top_link"> 
@@ -116,7 +169,13 @@
       </geometry>
       <origin xyz="0 0 0.005" rpy="0 0 0"/>
       <material name="red"/>
-    </visual>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>      
   </link>
   
   <link name="y1_shelf_top_link"> 
@@ -126,7 +185,13 @@
       </geometry>
       <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
       <material name="red"/>
-    </visual>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+    </collision>       
   </link>
   
   <link name="y2_wall_top_link"> 
@@ -137,9 +202,31 @@
       <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
       <material name="glass"/>
     </visual>
+      <collision>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>     
   </link>
   
-  
+  <link name="counter">
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.155" rpy="0 0 1.5708"/>
+      <material name="red"/>      
+    </visual>
+      <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.155" rpy="0 0 1.5708"/>
+    </collision>      
+  </link>  
+
+
   <joint name="joint_x1_wall" type="fixed">
     <parent link="base_link"/>
     <child link="x1_wall_link"/> 
@@ -214,6 +301,13 @@
     <parent link="base_link"/>
     <child link="y2_wall_top_link"/> 
     <origin xyz="-0.51 0 0.64" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>  
+
+  <joint name="joint_counter" type="fixed">
+    <parent link="y2_wall_link"/>
+    <child link="counter"/> 
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 0"/>
   </joint>  
 
