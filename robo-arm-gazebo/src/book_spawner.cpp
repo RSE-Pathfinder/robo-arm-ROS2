@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "gazebo_msgs/srv/spawn_entity.hpp"
+#include "gazebo_msgs/srv/spawn_model.hpp"
 
 #include <chrono>
 #include <cstdlib>
@@ -15,11 +15,20 @@ int main(int argc, char ** argv) {
   std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("book_spawner_client");
 
   // Initialise Client Node
-  rclcpp::Client<gazebo_msgs::srv::SpawnEntity>::SharedPtr client = node->create_client<gazebo_msgs::srv::SpawnEntity>("book_spawner");
+  rclcpp::Client<gazebo_msgs::srv::SpawnModel>::SharedPtr client = node->create_client<gazebo_msgs::srv::SpawnModel>("book_spawner");
 
   // Initialise Request
-  auto request = std::make_shared<gazebo_msgs::srv::SpawnEntity::Request>();
-  //request = book;
+  auto request = std::make_shared<gazebo_msgs::srv::SpawnModel::Request>();
+  request->model_name = "Book_1";
+  request->model_xml = "/models/environment/book.urdf";
+  request->robot_namespace = "book";
+  request->initial_pose.position.x = 0;
+  request->initial_pose.position.y = 0;
+  request->initial_pose.position.z = 0;
+  request->initial_pose.orientation.x = 0;
+  request->initial_pose.orientation.y = 0;
+  request->initial_pose.orientation.z = 0;
+  request->initial_pose.orientation.w = 1;
 
   while (!client->wait_for_service(1s)) {
     if (!rclcpp::ok()) {
@@ -35,7 +44,7 @@ int main(int argc, char ** argv) {
   if (rclcpp::spin_until_future_complete(node, result) == rclcpp::FutureReturnCode::SUCCESS) {
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Books Spawned");
   } else {
-    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service spawn_entity");
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service spawn_model");
   }
 
   rclcpp::shutdown();

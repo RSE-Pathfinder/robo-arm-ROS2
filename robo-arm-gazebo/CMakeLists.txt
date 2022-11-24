@@ -55,27 +55,16 @@ set(EXEC_NAME "book_spawner")
 add_executable(${EXEC_NAME} src/book_spawner.cpp)
 ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
-#add_library(obstacle1 SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacle1.cc)
-#target_link_libraries(obstacle1 ${GAZEBO_LIBRARIES})
-
-#add_library(obstacle2 SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacle2.cc)
-#target_link_libraries(obstacle2 ${GAZEBO_LIBRARIES})
-
-#add_library(obstacles SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacles.cc)
-#target_link_libraries(obstacles ${GAZEBO_LIBRARIES})
-
 ################################################################################
 # Install
 ################################################################################
-install(DIRECTORY worlds/ DESTINATION share/${PROJECT_NAME}/worlds)
+install(TARGETS ${EXEC_NAME}
+  DESTINATION lib/${PROJECT_NAME}
+)
 
-#install(TARGETS ${EXEC_NAME}
-#  DESTINATION lib/${PROJECT_NAME}
-#)
-
-#install(DIRECTORY launch models rviz worlds
-#  DESTINATION share/${PROJECT_NAME}/
-#)
+install(DIRECTORY launch models worlds
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 #install(DIRECTORY include/
 #  DESTINATION include/
