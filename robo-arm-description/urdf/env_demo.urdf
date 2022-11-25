@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<robot name="my_robot">
+
+  <material name="blue">
+    <color rgba="0 0 0.5 1"/>
+  </material>
+  
+  <material name="green">
+    <color rgba="0 0.5 0 1"/>
+  </material>
+  
+  <material name="red">
+    <color rgba="0.5 0 0 1"/>
+  </material>
+  
+  <material name="glass">
+    <color rgba="0.5 0.5 0.5 0.5"/>
+  </material>
+
+<!-- export LC_NUMERIC="en_US.UTF-8" -->
+
+  <link name="base_link"> 
+    <visual>
+      <geometry>
+        <box size="1 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 0.02"/>
+      </geometry>
+    </collision>    
+  </link>
+  
+  <link name="x1_wall_link"> 
+    <visual>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+    </collision>     
+  </link>
+  
+  <link name="x2_wall_link"> 
+    <visual>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.8 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="1.5708 0 0"/>
+    </collision>           
+  </link>
+  
+  <link name="y1_wall_link"> 
+    <visual>
+      <geometry>
+        <box size="0.8 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.8 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>      
+  </link>
+  
+  <link name="y2_wall_link"> 
+    <visual>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+      <material name="green"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>     
+  </link>
+  
+  <link name="x1_shelf_btm_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>        
+  </link>
+  
+  <link name="x2_shelf_btm_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>    
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>       
+  </link>
+  
+  <link name="y1_shelf_btm_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+    </collision>        
+  </link>
+  
+  <link name="x1_shelf_top_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>        
+  </link>
+  
+  <link name="x2_shelf_top_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <material name="red"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    </collision>      
+  </link>
+  
+  <link name="y1_shelf_top_link"> 
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+      <material name="red"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.005" rpy="0 0 1.5708"/>
+    </collision>       
+  </link>
+  
+  <link name="y2_wall_top_link"> 
+    <visual>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+      <material name="glass"/>
+    </visual>
+      <collision>
+      <geometry>
+        <box size="0.3 1 0.02"/>
+      </geometry>
+      <origin xyz="0 0 0.01" rpy="0 1.5708 0"/>
+    </collision>     
+  </link>
+  
+  <link name="counter">
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.155" rpy="0 0 1.5708"/>
+      <material name="red"/>      
+    </visual>
+      <collision>
+      <geometry>
+        <box size="0.5 0.2 0.01"/>
+      </geometry>
+      <origin xyz="0 0 0.155" rpy="0 0 1.5708"/>
+    </collision>      
+  </link>  
+
+
+  <joint name="joint_x1_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="x1_wall_link"/> 
+    <origin xyz="0 0.51 0.41" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_x2_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="x2_wall_link"/> 
+    <origin xyz="0 -0.51 0.41" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_y1_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="y1_wall_link"/> 
+    <origin xyz="0.51 0 0.41" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_y2_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="y2_wall_link"/> 
+    <origin xyz="-0.51 0 0.16" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_x1_shelf_btm" type="fixed">
+    <parent link="x1_wall_link"/>
+    <child link="x1_shelf_btm_link"/> 
+    <origin xyz="0 -0.11 -0.2" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_x2_shelf_btm" type="fixed">
+    <parent link="x2_wall_link"/>
+    <child link="x2_shelf_btm_link"/> 
+    <origin xyz="0 0.11 -0.2" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_y1_shelf_btm" type="fixed">
+    <parent link="y1_wall_link"/>
+    <child link="y1_shelf_btm_link"/> 
+    <origin xyz="-0.11 0 -0.2" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_x1_shelf_top" type="fixed">
+    <parent link="x1_wall_link"/>
+    <child link="x1_shelf_top_link"/> 
+    <origin xyz="0 -0.11 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_x2_shelf_top" type="fixed">
+    <parent link="x2_wall_link"/>
+    <child link="x2_shelf_top_link"/> 
+    <origin xyz="0 0.11 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <joint name="joint_y1_shelf_top" type="fixed">
+    <parent link="y1_wall_link"/>
+    <child link="y1_shelf_top_link"/> 
+    <origin xyz="-0.11 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="joint_y2_wall_top" type="fixed">
+    <parent link="base_link"/>
+    <child link="y2_wall_top_link"/> 
+    <origin xyz="-0.51 0 0.64" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>  
+
+  <joint name="joint_counter" type="fixed">
+    <parent link="y2_wall_link"/>
+    <child link="counter"/> 
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>  
+
+</robot>

@@ -1,0 +1,23 @@
+Coordinates(x, y, z):
+
+Book Dimension used: (0.20, 0.05, 0.20)
+
+**PS** ROUGH COORDINATES **PS**
+
+standby mode: 0.35 0.007 0.006
+
+arm first extension: 0.767 0.243 0.269
+
+arm second extension: 0.104 -0.74 0.75
+
+arm third extension: 0.0767 -0.619 0.728
+
+arm fourth extension: -0.698 0.112 0.721
+
+arm fifth extension: 0.261 0.565 0.721
+
+arm sixth extension: -0.183 0.608 0.874
+
+claw: set open and close
+
+
