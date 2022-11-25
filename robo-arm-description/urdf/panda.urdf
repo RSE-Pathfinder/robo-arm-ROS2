@@ -8,13 +8,16 @@
     <link name="panda_link0">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link0.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link0.dae">
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link0.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link0.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link0.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -25,13 +28,17 @@
     <link name="panda_link1">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link1.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link1.dae">
+                    <uri>package://robo-arm-description/meshes/meshes/visual/link1.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link1.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link1.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link1.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -50,13 +57,17 @@
     <link name="panda_link2">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link2.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link2.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link2.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link2.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link2.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link2.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -75,13 +86,17 @@
     <link name="panda_link3">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link3.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link3.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link3.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link3.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link3.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link3.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -100,13 +115,17 @@
     <link name="panda_link4">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link4.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link4.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link4.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link4.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link4.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link4.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -125,13 +144,17 @@
     <link name="panda_link5">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link5.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link5.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link5.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link5.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link5.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link5.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -150,13 +173,17 @@
     <link name="panda_link6">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link6.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link6.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link6.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link6.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link6.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link6.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -175,13 +202,17 @@
     <link name="panda_link7">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/link7.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/link7.dae">
+                    <uri>package://robo-arm-description/meshes/visual/link7.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/link7.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/link7.stl">
+                    <uri>package://robo-arm-description/meshes/collision/link7.stl</uri>
+                </mesh>
             </geometry>
         </collision>
     </link>
@@ -208,13 +239,17 @@
     <link name="panda_hand">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/hand.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/hand.dae">
+                    <uri>package://robo-arm-description/meshes/visual/hand.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/hand.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/hand.stl">
+                    <uri>package://robo-arm-description/meshes/collision/hand.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -225,13 +260,17 @@
     <link name="panda_leftfinger">
         <visual>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/finger.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/finger.dae">
+                    <uri>package://robo-arm-description/meshes/visual/finger.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/finger.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/finger.stl">
+                    <uri>package://robo-arm-description/meshes/collision/finger.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>
@@ -243,14 +282,18 @@
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/visual/finger.dae" />
+                <mesh filename="package://robo-arm-description/meshes/visual/finger.dae">
+                    <uri>package://robo-arm-description/meshes/visual/finger.dae</uri>
+                </mesh>
                 <color rgba="1 1 1 1"/>
             </geometry>
         </visual>
         <collision>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
-                <mesh filename="/home/cryptic/robo_arm_ws/src/robo-arm-ROS2/robo-arm-description/meshes/collision/finger.stl" />
+                <mesh filename="package://robo-arm-description/meshes/collision/finger.stl">
+                    <uri>package://robo-arm-description/meshes/collision/finger.stl</uri>
+                </mesh>
             </geometry>
         </collision>
         <inertial>

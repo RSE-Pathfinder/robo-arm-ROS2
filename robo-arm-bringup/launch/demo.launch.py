@@ -215,20 +215,24 @@ def generate_launch_description():
 
     world = os.path.join(get_package_share_directory(
         'robo-arm-gazebo'), 'worlds', world_file_name)
-
     urdf = os.path.join(get_package_share_directory(
         robot_name), 'urdf', 'panda.urdf')
 
     xml = open(urdf, 'r').read()
-
     xml = xml.replace('"', '\\"')
-
     swpan_args = '{name: \"robo-arm\", xml: \"' + xml + '\" }'
-
+    gazebo_ros = Node(
+        package='gazebo_ros',
+            executable='spawn_entity.py',
+            name='urdf_spawner',
+            output='screen',
+            arguments=["-topic", "/robot_description", "-entity", "robo-arm"]
+    )
     return LaunchDescription(
         [
             ExecuteProcess(
                 cmd=['gazebo', '--verbose', world,
+                     #'-s'],
                      '-s', 'libgazebo_ros_factory.so'],
                 output='screen'),
 
@@ -237,10 +241,12 @@ def generate_launch_description():
                     'use_sim_time', use_sim_time],
                 output='screen'),
 
-            ExecuteProcess(
-                cmd=['ros2', 'service', 'call', '/spawn_entity',
-                    'gazebo_msgs/SpawnEntity', swpan_args],
-                output='screen'),
+            #ExecuteProcess(
+            #    cmd=['ros2', 'service', 'call', '/spawn_entity',
+            #        'gazebo_msgs/SpawnEntity', swpan_args],
+            #    output='screen'),
+            gazebo_ros,
+
             tutorial_arg,
             rviz_node,
             rviz_node_tutorial,
