@@ -1,6 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "gazebo_msgs/srv/spawn_entity.hpp"
 
+#include <fstream>
 #include <chrono>
 #include <cstdlib>
 #include <memory>
@@ -11,25 +12,39 @@ using namespace std::chrono_literals;
 int main(int argc, char ** argv) {
   rclcpp::init(argc, argv);
 
+  // Declare XML File reference
+  std::string const HOME = std::getenv("HOME") ? std::getenv("HOME") : ".";
+  std::ifstream xml_file(HOME + "/robo_arm_ws/src/robo-arm-ROS2/robo-arm-gazebo/models/environment/book.urdf");
+  std::string xml_object{};
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Here");
+
+  if (xml_file.is_open()) {
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "XML File is Open");
+    std::string line;
+    while (getline (xml_file, line)) {
+      xml_object.append(line);
+    }
+    xml_file.close();
+  }
+
   // Initialise Node
   std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("book_spawner_client");
 
   // Initialise Client Node
-  rclcpp::Client<gazebo_msgs::srv::SpawnEntity>::SharedPtr client = node->create_client<gazebo_msgs::srv::SpawnEntity>("book_spawner");
+  rclcpp::Client<gazebo_msgs::srv::SpawnEntity>::SharedPtr client = node->create_client<gazebo_msgs::srv::SpawnEntity>("/spawn_entity");
 
   // Initialise Request
   auto request = std::make_shared<gazebo_msgs::srv::SpawnEntity::Request>();
-  request->name = "Book_1";
-  request->xml = "/models/environment/book.urdf";
+  request->name = "Book1";
+  request->xml = xml_object;
   request->robot_namespace = "book";
-  request->initial_pose.position.x = 0;
-  request->initial_pose.position.y = 0;
-  request->initial_pose.position.z = 1;
-  request->initial_pose.orientation.x = 0;
-  request->initial_pose.orientation.y = 0;
-  request->initial_pose.orientation.z = 0;
-  request->initial_pose.orientation.w = 1;
-  //request->reference_frame = ;
+  request->initial_pose.position.x = 0.0;
+  request->initial_pose.position.y = 0.0;
+  request->initial_pose.position.z = 1.0;
+  // request->initial_pose.orientation.x = 0.0;
+  // request->initial_pose.orientation.y = 0.0;
+  // request->initial_pose.orientation.z = 0.0;
+  // request->initial_pose.orientation.w = 1.0;
 
   while (!client->wait_for_service(1s)) {
     if (!rclcpp::ok()) {
