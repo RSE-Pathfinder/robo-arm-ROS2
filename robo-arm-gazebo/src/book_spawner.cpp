@@ -37,10 +37,10 @@ int main(int argc, char ** argv) {
   auto request = std::make_shared<gazebo_msgs::srv::SpawnEntity::Request>();
   request->name = "Book1";
   request->xml = xml_object;
-  request->robot_namespace = "book";
+  request->robot_namespace = "environment";
   request->initial_pose.position.x = 0.0;
   request->initial_pose.position.y = 0.0;
-  request->initial_pose.position.z = 1.0;
+  request->initial_pose.position.z = 0.5;
   // request->initial_pose.orientation.x = 0.0;
   // request->initial_pose.orientation.y = 0.0;
   // request->initial_pose.orientation.z = 0.0;
@@ -58,7 +58,41 @@ int main(int argc, char ** argv) {
 
   // Wait for the result.
   if (rclcpp::spin_until_future_complete(node, result) == rclcpp::FutureReturnCode::SUCCESS) {
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Books Spawned");
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Book 1 Spawned");
+  } else {
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service spawn_entity");
+  }
+
+  // Spawn Book 2
+  request->name = "Book2";
+  request->xml = xml_object;
+  request->robot_namespace = "environment";
+  request->initial_pose.position.x = 0.0;
+  request->initial_pose.position.y = 0.1;
+  request->initial_pose.position.z = 0.5;
+
+  result = client->async_send_request(request);
+
+  // Wait for the result.
+  if (rclcpp::spin_until_future_complete(node, result) == rclcpp::FutureReturnCode::SUCCESS) {
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Book 2 Spawned");
+  } else {
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service spawn_entity");
+  }
+
+  // Spawn Book 3
+  request->name = "Book3";
+  request->xml = xml_object;
+  request->robot_namespace = "environment";
+  request->initial_pose.position.x = 0.0;
+  request->initial_pose.position.y = 0.2;
+  request->initial_pose.position.z = 0.5;
+
+  result = client->async_send_request(request);
+
+  // Wait for the result.
+  if (rclcpp::spin_until_future_complete(node, result) == rclcpp::FutureReturnCode::SUCCESS) {
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Book 3 Spawned");
   } else {
     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service spawn_entity");
   }
