@@ -237,10 +237,10 @@ def generate_launch_description():
                     'use_sim_time', use_sim_time],
                 output='screen'),
 
-            ExecuteProcess(
-                cmd=['ros2', 'service', 'call', '/spawn_entity',
-                    'gazebo_msgs/SpawnEntity', swpan_args],
-                output='screen'),
+            #ExecuteProcess(
+            #    cmd=['ros2', 'service', 'call', '/spawn_entity',
+            #        'gazebo_msgs/SpawnEntity', swpan_args],
+            #    output='screen'),
             tutorial_arg,
             rviz_node,
             rviz_node_tutorial,
